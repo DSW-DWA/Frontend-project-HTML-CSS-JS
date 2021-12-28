@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+body {
+    background-color: #F3F7FA;
+    width: 100%;
+    overflow: scroll;
+}
+
+#Filter_panel{
+    background-color: #ffffff;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px 20px 20px;
+    margin-bottom: 20px;
+}
+.right-object{
+    margin-bottom: 20px;
+}
+.Point {
+    height: 20px;
+    margin-top: 20px;
+}
+#Logo {
+    margin: 50px 0 ;
+}
+@media screen and (max-width: 768px) { 
+    #Filter_panel{
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        padding: 12px;
+    }
+}
+.Point_Checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+.Point_Checkbox+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+  }
+.Point_Checkbox+label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #9ABBCE;
+    border-radius: 2px;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+
+.Point_Checkbox:checked+label::before {
+    border-color:  #2196F3;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.28571 8L0 4.16123L1.20857 3.0787L4.28571 5.82726L10.7914 0L12 1.09021L4.28571 8Z' fill='%232196F3'/%3E%3C/svg%3E%0A");
+}
+
+#Tabs {
+    margin-bottom: 20px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+}
+.Tabs_point{
+    background-color: #ffffff;
+    color: #4A4A4A;
+    border: 1px solid #DFE5EC;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Tabs_point:hover {
+    background-color: #2196F3;
+    color: #ffffff;
+    cursor: pointer;
+    border: #2196F3;
+    box-shadow: 0 0 1.5rem rgba(11, 127, 171, 0.75);
+}
+#Tabs_one {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+#Tabs_third {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+@keyframes disappear{
+    0% {
+        opacity: 1;
+    }
+    100% {
+        height: 0;
+        opacity: 0;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        display: none;
+    }
+}
+@keyframes apperance{
+    0% {
+        height: 0;
+        opacity: 0;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        display: none;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.Ticket {
+    transition-property: left box-shadow;
+    transition-duration: 0.5s;
+    animation: apperance 1s;
+    height: 184px;
+    min-width: 504px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+.Ticket:hover {
+    left: 5px;
+    box-shadow: 0 0 1rem rgba(11, 127, 171, 0.75);
+    
+}
+.errTicket {
+    height: 184px;
+    min-width: 504px;
+    box-sizing: border-box;
+    background-color: rgb(255, 119, 113);
+    border-radius: 5px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #4A4A4A;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+}
+.sticker{
+    width: 110px;
+    height: 36px;
+}
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.price {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+    color: #2196F3;
+}
+.rest_ticket{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.first-line{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    color: #A0B0B9;
+}
+.second-line {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: #4A4A4A;
+}
+.line {
+    margin-bottom: 10px;
+}
+#addButton{
+    width: 100%;
+    height: 50px;
+    background: #2196F3;
+    border-radius: 5px;
+    color: #ffffff;
+    border: #2196F3;
+}
+#addButton:hover {
+    box-shadow: 0 0 1.5rem rgba(11, 127, 171, 0.75);
+}
+.active {
+    background-color: #2196F3;
+    color: #ffffff;
+}
+.hide {
+    animation: disappear 1s;
+    animation-fill-mode: forwards;
+}
+.hide1 {
+    animation: disappear 1s;
+    animation-fill-mode: forwards;
+}
+.hide3 {
+    display: none;
+}
+.Tab_animated{
+    transition-property: background box-shadow;
+    transition-duration: 0.5s;
+}
